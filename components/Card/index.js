@@ -1,16 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Card({ recipe }) {
   return (
     <div>
-      <figure>
+      <Link href={`recipes${recipe.id}`}>
         <Image
-          scr={recipe.image}
+          src={recipe.image}
           alt={recipe.title}
-          //   sizes="(max-width:400px)"
+          width={200}
+          height={270}
         ></Image>
-      </figure>
-      <h2>{recipe.title}</h2>
+        <h2>{recipe.title}</h2>
+      </Link>
     </div>
   );
 }
