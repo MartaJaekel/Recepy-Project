@@ -15,6 +15,7 @@ const nextConfig = {
   },
   images: {
     domains: ["dummyimage.com"],
+    domains: ["images.unsplash.com"],
   },
 };
 
