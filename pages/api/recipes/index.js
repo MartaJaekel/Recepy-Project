@@ -6,13 +6,8 @@ export default async function handler(request, response) {
 
   //GET method
   if (request.method === "GET") {
-    try {
-      const recipes = await Recipe.find();
-      console.log("recipes: ", recipes);
-      response.status(200).json(recipes);
-    } catch (error) {
-      console.error("Error fetching recipes:", error);
-      response.status(500).json({ error: "Internal Server Error" });
-    }
+    const recipes = await Recipe.find();
+    console.log("places: ", recipes);
+    return response.status(200).json(recipes);
   }
 }

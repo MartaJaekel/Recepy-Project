@@ -8,11 +8,8 @@ export default function DetailPage() {
 
   const { data: recipe, isLoading, error } = useSWR(`/api/recipes/${id}`);
 
-  if (error) return <div>Error loading recipe</div>;
-  if (!player) return <div>Loading...</div>;
+  if (!isReady || isLoading || error) return <h2>Loading...</h2>;
 
-
-  
   return (
     <>
       <Image src={recipe.image} />

@@ -5,13 +5,14 @@ export default async function handler(request, response) {
   await dbConnect();
   const { id } = request.query;
 
+  // GET method
   if (request.method === "GET") {
-    try {
-      const recipes = await Recipe.findById(id);
-      response.status(200).json(recipes);
-    } catch (error) {
-      console.error("Error fetching recipes:", error);
-      response.status(500).json({ error: "Internal Server Error" });
+    const recipe = await Recipe.findById(id);
+
+    if (!recipe) {
+      return response.status(404).json({ status: "Not Found" });
     }
+
+    response.status(200).json(recipe);
   }
 }

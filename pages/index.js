@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import Card from "@/components/Card";
 
-
 export default function HomePage() {
   const { data: recipes } = useSWR("api/recipes");
 
