@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
@@ -12,7 +13,14 @@ export default function DetailPage() {
 
   return (
     <>
-      <Image src={recipe.image} />
+    <h1>{recipe.title}</h1>
+    <p>servings:{recipe.servings} </p>
+    <p>time:{recipe.time}</p>
+      <Image src={recipe.image}  alt={recipe.title}
+          width={200}
+          height={270} />
+          <p>{recipe.ingredients}</p>
+          <p>{recipe.directions}</p>
     </>
   );
 }

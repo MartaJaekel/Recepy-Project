@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Card({ recipe }) {
   return (
     <div>
-      <Link href={`recipes${recipe.id}`}>
+      <Link href={`recipes/${recipe._id}`}>
         <Image
           src={recipe.image}
           alt={recipe.title}

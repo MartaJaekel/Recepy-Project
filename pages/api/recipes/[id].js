@@ -7,12 +7,12 @@ export default async function handler(request, response) {
 
   // GET method
   if (request.method === "GET") {
-    const recipe = await Recipe.findById(id);
+    const recipes = await Recipe.findById(id);
 
-    if (!recipe) {
+    if (!recipes) {
       return response.status(404).json({ status: "Not Found" });
     }
 
-    response.status(200).json(recipe);
+    response.status(200).json(recipes);
   }
 }
