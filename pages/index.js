@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import Card from "@/components/Card";
+import Link from "next/link";
 
 export default function HomePage() {
   const { data: recipes } = useSWR("api/recipes");
@@ -19,7 +20,9 @@ export default function HomePage() {
             </li>
           );
         })}
+
       </ul>
+      <Link href="/create">Create Recipe</Link>
     </div>
   );
 }
