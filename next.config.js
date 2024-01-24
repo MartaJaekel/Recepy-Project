@@ -14,8 +14,12 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["dummyimage.com"],
-    domains: ["images.unsplash.com"],
+    domains: [
+      "images.unsplash.com",
+      "plus.unsplash.com",
+      "https://www.google.com/",
+      "upload.wikimedia.org",
+    ],
   },
 };
 

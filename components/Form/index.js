@@ -1,4 +1,5 @@
-export default function Form() {
+export default function Form(onSubmit) {
+    
   return (
     <>
       <form>
@@ -15,6 +16,7 @@ export default function Form() {
         <label htmlFor="directions">Directions</label>
         <input id="directions" name="directions" type="text"></input>
       </form>
+      <button type="submit">Submit Form</button>
     </>
   );
 }
